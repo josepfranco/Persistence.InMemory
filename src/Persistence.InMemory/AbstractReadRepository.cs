@@ -17,11 +17,13 @@ namespace Persistence.InMemory
             _context = context;
         }
 
+        protected IEnumerable<TEntity> RelatedData => _context.ReadAll<TEntity>();
+
         public Task<TEntity> ReadByIdAsync(long id, CancellationToken token = default)
         {
             return Task.Run(() =>
             {
-                return _context.ReadAll<TEntity>().FirstOrDefault(x => x.Id == id);
+                return RelatedData.FirstOrDefault(x => x.Id == id);
             }, token);
         }
 
@@ -29,13 +31,13 @@ namespace Persistence.InMemory
         {
             return Task.Run(() =>
             {
-                return _context.ReadAll<TEntity>().FirstOrDefault(x => x.GlobalId == globalId);
+                return RelatedData.FirstOrDefault(x => x.GlobalId == globalId);
             }, token);
         }
 
         public Task<IEnumerable<TEntity>> ReadAllAsync(CancellationToken token = default)
         {
-            return Task.Run(() => _context.ReadAll<TEntity>(), token);
+            return Task.Run(() => RelatedData, token);
         }
     }
 }
