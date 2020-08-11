@@ -2,6 +2,15 @@
 
     <PropertyGroup>
         <TargetFramework>netcoreapp3.1</TargetFramework>
+
+        <!-- NUGET METADATA -->
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <VersionSuffix>alpha</VersionSuffix>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Authors>José Franco</Authors>
+        <RepositoryUrl>https://github.com/josepfranco/Persistence.InMemory</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <!--                -->
     </PropertyGroup>
 
     <ItemGroup>
