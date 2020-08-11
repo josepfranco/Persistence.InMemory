@@ -16,21 +16,6 @@ namespace Persistence.InMemory.Extensions
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             return services;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="services"></param>
-        /// <typeparam name="TEntity"></typeparam>
-        /// <typeparam name="TRepository"></typeparam>
-        /// <returns></returns>
-        public static IServiceCollection AddInMemoryWriteRepository<TEntity, TRepository>(this IServiceCollection services)
-            where TEntity : class, IDomainEntity
-            where TRepository : AbstractInMemoryWriteRepository<TEntity>
-        {
-            services.AddTransient<IWriteRepository<TEntity>, TRepository>();
-            return services;
-        }
         
         /// <summary>
         /// 
@@ -41,28 +26,10 @@ namespace Persistence.InMemory.Extensions
         /// <returns></returns>
         public static IServiceCollection AddInMemoryReadRepository<TEntity, TRepository>(this IServiceCollection services)
             where TEntity : class, IDomainEntity
-            where TRepository : AbstractInMemoryReadRepository<TEntity>
+            where TRepository : AbstractReadRepository<TEntity>
         {
             services.AddTransient<IReadRepository<TEntity>, TRepository>();
             return services;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="services"></param>
-        /// <typeparam name="TEntity"></typeparam>
-        /// <typeparam name="TReadRepository"></typeparam>
-        /// <typeparam name="TWriteRepository"></typeparam>
-        /// <returns></returns>
-        public static IServiceCollection AddInMemoryRepository<TEntity, TReadRepository, TWriteRepository>(this IServiceCollection services)
-            where TEntity : class, IDomainEntity
-            where TReadRepository : AbstractInMemoryReadRepository<TEntity>
-            where TWriteRepository : AbstractInMemoryWriteRepository<TEntity>
-        {
-            return services
-                .AddInMemoryReadRepository<TEntity, TReadRepository>()
-                .AddInMemoryWriteRepository<TEntity, TWriteRepository>();
         }
     }
 }

@@ -5,12 +5,12 @@ using Abstractions.Persistence;
 
 namespace Persistence.InMemory
 {
-    public abstract class AbstractInMemoryWriteRepository<TEntity> : IWriteRepository<TEntity>
-        where TEntity : class, IDomainEntity
+    internal sealed class WriteRepository<TEntity> : IWriteRepository<TEntity>
+        where TEntity : IDomainEntity
     {
         private readonly IContext _context;
 
-        protected AbstractInMemoryWriteRepository(IContext context)
+        public WriteRepository(IContext context)
         {
             _context = context;
         }

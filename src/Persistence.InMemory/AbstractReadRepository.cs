@@ -7,12 +7,12 @@ using Abstractions.Persistence;
 
 namespace Persistence.InMemory
 {
-    public abstract class AbstractInMemoryReadRepository<TEntity> : IReadRepository<TEntity>
+    public abstract class AbstractReadRepository<TEntity> : IReadRepository<TEntity>
         where TEntity : class, IDomainEntity
     {
         private readonly IContext _context;
 
-        protected AbstractInMemoryReadRepository(IContext context)
+        protected AbstractReadRepository(IContext context)
         {
             _context = context;
         }

@@ -7,17 +7,15 @@ namespace Persistence.InMemory
     public class UnitOfWork : IUnitOfWork
     {
         private readonly IContext _context;
-        private readonly IServiceProvider _serviceProvider;
 
-        public UnitOfWork(IContext context, IServiceProvider serviceProvider)
+        public UnitOfWork(IContext context)
         {
             _context = context;
-            _serviceProvider = serviceProvider;
         }
 
         public IWriteRepository<TEntity> GetRepository<TEntity>() where TEntity : IDomainEntity
         {
-            return _serviceProvider.GetRequiredService<IWriteRepository<TEntity>>();
+            return new WriteRepository<TEntity>(_context);
         }
 
         public void Begin(string auditOwner)
