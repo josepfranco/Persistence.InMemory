@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Abstractions.Persistence;
@@ -71,7 +72,7 @@ namespace Persistence.InMemory
         /// Persists a value into the in-memory database
         /// </summary>
         /// <param name="entity"></param>
-        public void Insert(IDomainEntity entity)
+        public void Insert<TEntity>(TEntity entity) where TEntity : IDomainEntity
         {
             DoInsertOperation(entity, InTransactionOperation 
                 ? TransactionDatabaseSnapshot 
@@ -82,7 +83,7 @@ namespace Persistence.InMemory
         /// Updates a value existing in the in-memory database
         /// </summary>
         /// <param name="entity"></param>
-        public void Update(IDomainEntity entity)
+        public void Update<TEntity>(TEntity entity) where TEntity : IDomainEntity
         {
             DoUpdateOperation(entity, InTransactionOperation 
                 ? TransactionDatabaseSnapshot 
@@ -93,7 +94,7 @@ namespace Persistence.InMemory
         /// Merges (inserts or updates) a value into the in-memory database
         /// </summary>
         /// <param name="entity"></param>
-        public void Merge(IDomainEntity entity)
+        public void Merge<TEntity>(TEntity entity) where TEntity : IDomainEntity
         {
             DoMergeOperation(entity, InTransactionOperation 
                 ? TransactionDatabaseSnapshot 
@@ -104,7 +105,7 @@ namespace Persistence.InMemory
         /// Deletes a value from the in-memory database
         /// </summary>
         /// <param name="entity"></param>
-        public void Delete(IDomainEntity entity)
+        public void Delete<TEntity>(TEntity entity) where TEntity : IDomainEntity
         {
             DoDeleteOperation(entity, InTransactionOperation 
                 ? TransactionDatabaseSnapshot 
@@ -136,9 +137,9 @@ namespace Persistence.InMemory
             // is this a new entity with default id set?
             if (entity.Id == default)
             {
-                entity.Id = entityList.Count > 0          // do we have any other elements present?
-                    ? entityList[entityList.Count].Id + 1 // yes, then calculate last element's id + 1
-                    : 1;                                  // no, default id to 1
+                entity.Id = entityList.Count > 0 // do we have any other elements present?
+                    ? entityList[^1].Id + 1      // yes, then calculate last element's id + 1
+                    : 1;                         // no, default id to 1
             }
         }
 
@@ -176,10 +177,20 @@ namespace Persistence.InMemory
             entity.ModifiedAt = DateTime.UtcNow;
         }
 
-        private void DoInsertOperation(IDomainEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
+        private void DoInsertOperation<TEntity>(TEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
+            where TEntity : IDomainEntity
         {
             ValidateEntityKeys(entity);
             CreateDatabaseEmptyList(entity);
+            
+            // get all child entities
+            var typeProperties = entity.GetType().GetProperties();
+            var childEntityReferences = typeProperties
+                .Where(x => typeof(IDomainEntity).IsAssignableFrom(x.PropertyType));
+            var childEntitiesNestedInCollections = typeProperties
+                .Where(x => typeof(IEnumerable).IsAssignableFrom(x.PropertyType))
+                .Where(x => x.PropertyType.GenericTypeArguments
+                    .Any(y => typeof(IDomainEntity).IsAssignableFrom(y)));
 
             var entityList = database[entity.GetType()];
 
@@ -201,7 +212,8 @@ namespace Persistence.InMemory
             entityList.Add(entity);
         }
 
-        private void DoUpdateOperation(IDomainEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
+        private void DoUpdateOperation<TEntity>(TEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
+            where TEntity : IDomainEntity
         {
             ValidateEntityKeys(entity);
             CreateDatabaseEmptyList(entity);
@@ -217,7 +229,8 @@ namespace Persistence.InMemory
             entityList[indexOfEntity] = entity;
         }
 
-        private void DoMergeOperation(IDomainEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
+        private void DoMergeOperation<TEntity>(TEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
+            where TEntity : IDomainEntity
         {
             ValidateEntityKeys(entity);
             CreateDatabaseEmptyList(entity);
@@ -259,7 +272,8 @@ namespace Persistence.InMemory
             }
         }
 
-        private void DoDeleteOperation(IDomainEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
+        private void DoDeleteOperation<TEntity>(TEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
+            where TEntity : IDomainEntity
         {
             ValidateEntityKeys(entity);
             CreateDatabaseEmptyList(entity);

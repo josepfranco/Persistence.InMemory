@@ -1,4 +1,4 @@
-namespace Persistence.InMemory.Tests.Unit.ReadRepository
+namespace Persistence.InMemory.Tests.Integration.ReadRepository
 {
     public class ReadByGlobalIdOperationTests
     {

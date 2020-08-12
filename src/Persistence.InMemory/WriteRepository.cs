@@ -5,7 +5,7 @@ using Abstractions.Persistence;
 
 namespace Persistence.InMemory
 {
-    internal sealed class WriteRepository<TEntity> : IWriteRepository<TEntity>
+    public sealed class WriteRepository<TEntity> : IWriteRepository<TEntity>
         where TEntity : IDomainEntity
     {
         private readonly IContext _context;
