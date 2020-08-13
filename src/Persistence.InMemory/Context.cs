@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Abstractions.Persistence;
 
 namespace Persistence.InMemory
@@ -62,7 +63,7 @@ namespace Persistence.InMemory
         /// <returns></returns>
         public IEnumerable<T> ReadAll<T>() where T : IDomainEntity
         {
-            var entityList = Database[typeof(T)];
+            Database.TryGetValue(typeof(T), out var entityList);
             return entityList != null
                 ? entityList.Cast<T>()
                 : new List<T>();
@@ -132,8 +133,10 @@ namespace Persistence.InMemory
         }
 
         #region PRIVATE METHODS
-        private static void GenerateStoreInternalId(IDomainEntity entity, IList<IDomainEntity> entityList)
+        private static void GenerateStoreInternalId(IDomainEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
         {
+            var entityList = database[entity.GetType()];
+            
             // is this a new entity with default id set?
             if (entity.Id == default)
             {
@@ -176,40 +179,150 @@ namespace Persistence.InMemory
             entity.ModifiedBy = TransactionAuditOwner;
             entity.ModifiedAt = DateTime.UtcNow;
         }
+        
+        private static IEnumerable<IDomainEntity> GetAllChildReferences<TEntity>(TEntity entity) 
+            where TEntity : IDomainEntity
+        {
+            var visited = new HashSet<IDomainEntity>();
+            var frontier = new Queue<IDomainEntity>();
+            frontier.Enqueue(entity);
+
+            while (frontier.Count > 0)
+            {
+                var instance = frontier.Dequeue();
+                var allChildReferences = GetAllChildReferencesAux(instance);
+                visited.Add(instance);
+                foreach (var childInstance in allChildReferences)
+                {
+                    frontier.Enqueue(childInstance);
+                }
+            }
+
+            // remove the parent entity
+            visited.Remove(entity);
+            return visited;
+        }
+
+        private static IEnumerable<IDomainEntity> GetAllChildReferencesAux(IDomainEntity entity)
+        {
+            // get all child entities
+            var typeProperties = entity.GetType().GetProperties();
+            var referencePropertyNames = GetReferencePropertyNames(typeProperties);
+            var collectionPropertyNames = GetCollectionPropertyNames(typeProperties);
+
+            return collectionPropertyNames
+                .SelectMany(x => entity.GetType().GetProperty(x)?.GetValue(entity) as IEnumerable<IDomainEntity>)
+                .Concat(referencePropertyNames
+                    .Select(x => entity.GetType().GetProperty(x)?.GetValue(entity))
+                    .Cast<IDomainEntity>())
+                .Distinct()
+                .ToList();
+        }
+
+        private static IEnumerable<string> GetCollectionPropertyNames(IEnumerable<PropertyInfo> typeProperties)
+        {
+            var childEntitiesInCollectionNames = typeProperties
+                .Where(x => typeof(IEnumerable).IsAssignableFrom(x.PropertyType))
+                .Where(x => x.PropertyType.GenericTypeArguments
+                    .Any(y => typeof(IDomainEntity).IsAssignableFrom(y)))
+                .Select(x => x.Name);
+            return childEntitiesInCollectionNames;
+        }
+
+        private static IEnumerable<string> GetReferencePropertyNames(IEnumerable<PropertyInfo> typeProperties)
+        {
+            var childEntityReferenceNames = typeProperties
+                .Where(x => typeof(IDomainEntity).IsAssignableFrom(x.PropertyType))
+                .Select(x => x.Name);
+            return childEntityReferenceNames;
+        }
+        
+        private void InsertEntity<TEntity>(TEntity entity, IDictionary<Type, IList<IDomainEntity>> database) where TEntity : IDomainEntity
+        {
+            CreateDatabaseEmptyList(entity);
+            var entityList = database[entity.GetType()];
+            
+            // any duplicate guid found? throw exception
+            if (entityList.Select(x => x.GlobalId).Contains(entity.GlobalId))
+                throw new InvalidOperationException(
+                    $"Cannot insert duplicate entity with global unique id {entity.GlobalId}");
+
+            if (entity.Id == default)
+            {
+                GenerateStoreInternalId(entity, database);
+            }
+
+            CreateAuditData(entity);
+            UpdateAuditData(entity);
+            entityList.Add(entity);
+        }
+        
+        private void UpdateEntity<TEntity>(TEntity entity, IDomainEntity foundEntity, IDictionary<Type, IList<IDomainEntity>> database)
+            where TEntity : IDomainEntity
+        {
+            CreateDatabaseEmptyList(entity);
+            UpdateAuditData(entity);
+            var entityList = database[entity.GetType()];
+            var indexOfEntity = entityList.IndexOf(foundEntity);
+            entityList[indexOfEntity] = entity;
+        }
+        
+        private void DeleteEntity<TEntity>(TEntity entity, IDictionary<Type, IList<IDomainEntity>> database) where TEntity : IDomainEntity
+        {
+            CreateDatabaseEmptyList(entity);
+            if (entity.Id == default)
+                throw new InvalidOperationException(
+                    $"Cannot delete an entity without a defined internal id.");
+
+            var entityList = database[entity.GetType()];
+            var foundEntity = entityList.FirstOrDefault(x => x.Id == entity.Id && x.GlobalId == entity.GlobalId);
+            if (foundEntity == null)
+                throw new InvalidOperationException(
+                    $"Cannot delete unknown entity with id {entity.Id} and global unique id {entity.GlobalId}");
+
+            entityList.Remove(foundEntity);
+        }
+        
+        private void InsertEntities(IEnumerable<IDomainEntity> entities, IDictionary<Type, IList<IDomainEntity>> database)
+        {
+            foreach (var entity in entities)
+            {
+                InsertEntity(entity, database);
+            }
+        }
+
+        private void UpdateEntities(IEnumerable<IDomainEntity> entities, IDictionary<Type, IList<IDomainEntity>> database)
+        {
+            foreach (var entity in entities)
+            {
+                var entityList = database[entity.GetType()];
+                var foundEntity = entityList.FirstOrDefault(x => x.Id == entity.Id && x.GlobalId == entity.GlobalId);
+                UpdateEntity(entity, foundEntity, database);
+            }
+        }
+        
+        private void DeleteEntities(IEnumerable<IDomainEntity> entities, IDictionary<Type, IList<IDomainEntity>> database)
+        {
+            foreach (var entity in entities)
+            {
+                DeleteEntity(entity, database);
+            }
+        }
 
         private void DoInsertOperation<TEntity>(TEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
             where TEntity : IDomainEntity
         {
             ValidateEntityKeys(entity);
             CreateDatabaseEmptyList(entity);
-            
-            // get all child entities
-            var typeProperties = entity.GetType().GetProperties();
-            var childEntityReferences = typeProperties
-                .Where(x => typeof(IDomainEntity).IsAssignableFrom(x.PropertyType));
-            var childEntitiesNestedInCollections = typeProperties
-                .Where(x => typeof(IEnumerable).IsAssignableFrom(x.PropertyType))
-                .Where(x => x.PropertyType.GenericTypeArguments
-                    .Any(y => typeof(IDomainEntity).IsAssignableFrom(y)));
-
             var entityList = database[entity.GetType()];
-
-            GenerateStoreInternalId(entity, entityList);
-
+            
             // any duplicate internal id found? throw exception
             if (entityList.Select(x => x.Id).Contains(entity.Id))
                 throw new InvalidOperationException(
                     $"Cannot insert duplicate entity with internal id {entity.Id}");
-            
-            // any duplicate guid found? throw exception
-            if (entityList.Select(x => x.GlobalId).Contains(entity.GlobalId))
-                throw new InvalidOperationException(
-                    $"Cannot insert duplicate entity with global unique id {entity.GlobalId}");
-            
-            CreateAuditData(entity);
-            UpdateAuditData(entity);
-            
-            entityList.Add(entity);
+
+            GenerateStoreInternalId(entity, database);
+            InsertEntity(entity, database);
         }
 
         private void DoUpdateOperation<TEntity>(TEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
@@ -222,11 +335,7 @@ namespace Persistence.InMemory
             var foundEntity = entityList.FirstOrDefault(x => x.Id == entity.Id && x.GlobalId == entity.GlobalId);
             if (entity.Id == default || entity.GlobalId == default || entity.GlobalId == Guid.Empty || foundEntity == null)
                 throw new InvalidOperationException("Cannot update a not yet inserted entity.");
-            
-            UpdateAuditData(entity);
-            
-            var indexOfEntity = entityList.IndexOf(foundEntity);
-            entityList[indexOfEntity] = entity;
+            UpdateEntity(entity, foundEntity, database);
         }
 
         private void DoMergeOperation<TEntity>(TEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
@@ -235,60 +344,35 @@ namespace Persistence.InMemory
             ValidateEntityKeys(entity);
             CreateDatabaseEmptyList(entity);
             var entityList = database[entity.GetType()];
-            
-            // default internal id? insert
-            if (entity.Id == default)
-            {
-                GenerateStoreInternalId(entity, entityList);
-                
-                // any duplicate guid found? throw exception
-                if (entityList.Select(x => x.GlobalId).Contains(entity.GlobalId))
-                    throw new InvalidOperationException(
-                        $"Cannot merge (insert in this context) duplicate entity with global unique id {entity.GlobalId}");
-                
-                CreateAuditData(entity);
-                UpdateAuditData(entity);
-                
-                entityList.Add(entity);
-            }
-            
             var foundEntity = entityList.FirstOrDefault(x => x.Id == entity.Id && x.GlobalId == entity.GlobalId);
-
-            // not found? insert with predefined internal id
             if (foundEntity == null)
             {
-                CreateAuditData(entity);
-                UpdateAuditData(entity);
-                
-                entityList.Add(entity);
+                var allChildEntities = GetAllChildReferences(entity).ToList();
+                var toInsertEntities = allChildEntities.Except(ReadAll<IDomainEntity>()).ToList();
+                var toUpdateEntities = ReadAll<IDomainEntity>().Intersect(allChildEntities).ToList();
+                InsertEntities(toInsertEntities, database);
+                UpdateEntities(toUpdateEntities, database);
+                InsertEntity(entity, database);
             }
-            // found? then update
             else
             {
-                UpdateAuditData(entity);
-                
-                var indexOfEntity = entityList.IndexOf(foundEntity);
-                entityList[indexOfEntity] = entity;
+                var allDatabaseChildEntities = GetAllChildReferences(foundEntity).ToList();
+                var allChildEntities = GetAllChildReferences(entity).ToList();
+                var toInsertEntities = allChildEntities.Except(allDatabaseChildEntities).ToList();
+                var toUpdateEntities = allDatabaseChildEntities.Intersect(allChildEntities).ToList();
+                var toRemoveEntities = allDatabaseChildEntities.Except(allChildEntities).ToList();
+                InsertEntities(toInsertEntities, database);
+                UpdateEntities(toUpdateEntities, database);
+                DeleteEntities(toRemoveEntities, database);
+                UpdateEntity(entity, foundEntity, database);
             }
         }
-
         private void DoDeleteOperation<TEntity>(TEntity entity, IDictionary<Type, IList<IDomainEntity>> database)
             where TEntity : IDomainEntity
         {
             ValidateEntityKeys(entity);
             CreateDatabaseEmptyList(entity);
-            var entityList = database[entity.GetType()];
-            
-            if (entity.Id == default)
-                throw new InvalidOperationException(
-                    $"Cannot delete an entity without a defined internal id.");
-
-            var foundEntity = entityList.FirstOrDefault(x => x.Id == entity.Id && x.GlobalId == entity.GlobalId);
-            if (foundEntity == null)
-                throw new InvalidOperationException(
-                    $"Cannot delete unknown entity with id {entity.Id} and global unique id {entity.GlobalId}");
-
-            entityList.Remove(foundEntity);
+            DeleteEntity(entity, database);
         }
         #endregion
     }
