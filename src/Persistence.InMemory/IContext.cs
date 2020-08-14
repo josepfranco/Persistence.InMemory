@@ -7,10 +7,10 @@ namespace Persistence.InMemory
     {
         void StartTransaction(string auditOwner);
         IEnumerable<T> ReadAll<T>() where T : IDomainEntity;
-        void Insert(IDomainEntity entity);
-        void Update(IDomainEntity entity);
-        void Merge(IDomainEntity entity);
-        void Delete(IDomainEntity entity);
+        void Insert<TEntity>(TEntity entity) where TEntity : IDomainEntity;
+        void Update<TEntity>(TEntity entity) where TEntity : IDomainEntity;
+        void Merge<TEntity>(TEntity entity) where TEntity : IDomainEntity;
+        void Delete<TEntity>(TEntity entity) where TEntity : IDomainEntity;
         void Commit();
     }
 }

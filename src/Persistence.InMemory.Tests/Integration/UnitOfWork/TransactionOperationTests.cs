@@ -1,4 +1,4 @@
-namespace Persistence.InMemory.Tests.Unit.UnitOfWork
+namespace Persistence.InMemory.Tests.Integration.UnitOfWork
 {
     public class TransactionOperationTests
     {
