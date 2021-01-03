@@ -13,7 +13,7 @@ namespace Persistence.InMemory
             _context = context;
         }
 
-        public IWriteRepository<TEntity> GetRepository<TEntity>() where TEntity : IDomainEntity
+        public IWriteRepository<TEntity> GetRepository<TEntity>() where TEntity : class, IDomainEntity
         {
             return new WriteRepository<TEntity>(_context);
         }
