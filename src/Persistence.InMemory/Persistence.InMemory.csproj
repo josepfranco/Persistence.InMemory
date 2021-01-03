@@ -1,12 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
 
         <!-- NUGET METADATA -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <VersionSuffix>alpha</VersionSuffix>
-        <PackageVersion>1.0.2</PackageVersion>
+        <PackageVersion>2.0.0</PackageVersion>
         <Authors>José Franco</Authors>
         <RepositoryUrl>https://github.com/josepfranco/Persistence.InMemory</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
