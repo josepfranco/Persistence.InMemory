@@ -1,0 +1,608 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Persistence.InMemory
+  name: Persistence.InMemory
+  href: api/Persistence.InMemory.html
+  commentId: N:Persistence.InMemory
+  fullName: Persistence.InMemory
+  nameWithType: Persistence.InMemory
+- uid: Persistence.InMemory.AbstractReadRepository`1
+  name: AbstractReadRepository<TEntity>
+  href: api/Persistence.InMemory.AbstractReadRepository-1.html
+  commentId: T:Persistence.InMemory.AbstractReadRepository`1
+  name.vb: AbstractReadRepository(Of TEntity)
+  fullName: Persistence.InMemory.AbstractReadRepository<TEntity>
+  fullName.vb: Persistence.InMemory.AbstractReadRepository(Of TEntity)
+  nameWithType: AbstractReadRepository<TEntity>
+  nameWithType.vb: AbstractReadRepository(Of TEntity)
+- uid: Persistence.InMemory.AbstractReadRepository`1.#ctor(Persistence.InMemory.IContext)
+  name: AbstractReadRepository(IContext)
+  href: api/Persistence.InMemory.AbstractReadRepository-1.html#Persistence_InMemory_AbstractReadRepository_1__ctor_Persistence_InMemory_IContext_
+  commentId: M:Persistence.InMemory.AbstractReadRepository`1.#ctor(Persistence.InMemory.IContext)
+  fullName: Persistence.InMemory.AbstractReadRepository<TEntity>.AbstractReadRepository(Persistence.InMemory.IContext)
+  fullName.vb: Persistence.InMemory.AbstractReadRepository(Of TEntity).AbstractReadRepository(Persistence.InMemory.IContext)
+  nameWithType: AbstractReadRepository<TEntity>.AbstractReadRepository(IContext)
+  nameWithType.vb: AbstractReadRepository(Of TEntity).AbstractReadRepository(IContext)
+- uid: Persistence.InMemory.AbstractReadRepository`1.#ctor*
+  name: AbstractReadRepository
+  href: api/Persistence.InMemory.AbstractReadRepository-1.html#Persistence_InMemory_AbstractReadRepository_1__ctor_
+  commentId: Overload:Persistence.InMemory.AbstractReadRepository`1.#ctor
+  isSpec: "True"
+  fullName: Persistence.InMemory.AbstractReadRepository<TEntity>.AbstractReadRepository
+  fullName.vb: Persistence.InMemory.AbstractReadRepository(Of TEntity).AbstractReadRepository
+  nameWithType: AbstractReadRepository<TEntity>.AbstractReadRepository
+  nameWithType.vb: AbstractReadRepository(Of TEntity).AbstractReadRepository
+- uid: Persistence.InMemory.AbstractReadRepository`1.ReadAllAsync(CancellationToken)
+  name: ReadAllAsync(CancellationToken)
+  href: api/Persistence.InMemory.AbstractReadRepository-1.html#Persistence_InMemory_AbstractReadRepository_1_ReadAllAsync_CancellationToken_
+  commentId: M:Persistence.InMemory.AbstractReadRepository`1.ReadAllAsync(CancellationToken)
+  fullName: Persistence.InMemory.AbstractReadRepository<TEntity>.ReadAllAsync(CancellationToken)
+  fullName.vb: Persistence.InMemory.AbstractReadRepository(Of TEntity).ReadAllAsync(CancellationToken)
+  nameWithType: AbstractReadRepository<TEntity>.ReadAllAsync(CancellationToken)
+  nameWithType.vb: AbstractReadRepository(Of TEntity).ReadAllAsync(CancellationToken)
+- uid: Persistence.InMemory.AbstractReadRepository`1.ReadAllAsync*
+  name: ReadAllAsync
+  href: api/Persistence.InMemory.AbstractReadRepository-1.html#Persistence_InMemory_AbstractReadRepository_1_ReadAllAsync_
+  commentId: Overload:Persistence.InMemory.AbstractReadRepository`1.ReadAllAsync
+  isSpec: "True"
+  fullName: Persistence.InMemory.AbstractReadRepository<TEntity>.ReadAllAsync
+  fullName.vb: Persistence.InMemory.AbstractReadRepository(Of TEntity).ReadAllAsync
+  nameWithType: AbstractReadRepository<TEntity>.ReadAllAsync
+  nameWithType.vb: AbstractReadRepository(Of TEntity).ReadAllAsync
+- uid: Persistence.InMemory.AbstractReadRepository`1.ReadByGlobalIdAsync(Guid,CancellationToken)
+  name: ReadByGlobalIdAsync(Guid, CancellationToken)
+  href: api/Persistence.InMemory.AbstractReadRepository-1.html#Persistence_InMemory_AbstractReadRepository_1_ReadByGlobalIdAsync_Guid_CancellationToken_
+  commentId: M:Persistence.InMemory.AbstractReadRepository`1.ReadByGlobalIdAsync(Guid,CancellationToken)
+  fullName: Persistence.InMemory.AbstractReadRepository<TEntity>.ReadByGlobalIdAsync(Guid, CancellationToken)
+  fullName.vb: Persistence.InMemory.AbstractReadRepository(Of TEntity).ReadByGlobalIdAsync(Guid, CancellationToken)
+  nameWithType: AbstractReadRepository<TEntity>.ReadByGlobalIdAsync(Guid, CancellationToken)
+  nameWithType.vb: AbstractReadRepository(Of TEntity).ReadByGlobalIdAsync(Guid, CancellationToken)
+- uid: Persistence.InMemory.AbstractReadRepository`1.ReadByGlobalIdAsync*
+  name: ReadByGlobalIdAsync
+  href: api/Persistence.InMemory.AbstractReadRepository-1.html#Persistence_InMemory_AbstractReadRepository_1_ReadByGlobalIdAsync_
+  commentId: Overload:Persistence.InMemory.AbstractReadRepository`1.ReadByGlobalIdAsync
+  isSpec: "True"
+  fullName: Persistence.InMemory.AbstractReadRepository<TEntity>.ReadByGlobalIdAsync
+  fullName.vb: Persistence.InMemory.AbstractReadRepository(Of TEntity).ReadByGlobalIdAsync
+  nameWithType: AbstractReadRepository<TEntity>.ReadByGlobalIdAsync
+  nameWithType.vb: AbstractReadRepository(Of TEntity).ReadByGlobalIdAsync
+- uid: Persistence.InMemory.AbstractReadRepository`1.ReadByIdAsync(System.Int64,CancellationToken)
+  name: ReadByIdAsync(Int64, CancellationToken)
+  href: api/Persistence.InMemory.AbstractReadRepository-1.html#Persistence_InMemory_AbstractReadRepository_1_ReadByIdAsync_System_Int64_CancellationToken_
+  commentId: M:Persistence.InMemory.AbstractReadRepository`1.ReadByIdAsync(System.Int64,CancellationToken)
+  fullName: Persistence.InMemory.AbstractReadRepository<TEntity>.ReadByIdAsync(System.Int64, CancellationToken)
+  fullName.vb: Persistence.InMemory.AbstractReadRepository(Of TEntity).ReadByIdAsync(System.Int64, CancellationToken)
+  nameWithType: AbstractReadRepository<TEntity>.ReadByIdAsync(Int64, CancellationToken)
+  nameWithType.vb: AbstractReadRepository(Of TEntity).ReadByIdAsync(Int64, CancellationToken)
+- uid: Persistence.InMemory.AbstractReadRepository`1.ReadByIdAsync*
+  name: ReadByIdAsync
+  href: api/Persistence.InMemory.AbstractReadRepository-1.html#Persistence_InMemory_AbstractReadRepository_1_ReadByIdAsync_
+  commentId: Overload:Persistence.InMemory.AbstractReadRepository`1.ReadByIdAsync
+  isSpec: "True"
+  fullName: Persistence.InMemory.AbstractReadRepository<TEntity>.ReadByIdAsync
+  fullName.vb: Persistence.InMemory.AbstractReadRepository(Of TEntity).ReadByIdAsync
+  nameWithType: AbstractReadRepository<TEntity>.ReadByIdAsync
+  nameWithType.vb: AbstractReadRepository(Of TEntity).ReadByIdAsync
+- uid: Persistence.InMemory.AbstractReadRepository`1.RelatedData
+  name: RelatedData
+  href: api/Persistence.InMemory.AbstractReadRepository-1.html#Persistence_InMemory_AbstractReadRepository_1_RelatedData
+  commentId: P:Persistence.InMemory.AbstractReadRepository`1.RelatedData
+  fullName: Persistence.InMemory.AbstractReadRepository<TEntity>.RelatedData
+  fullName.vb: Persistence.InMemory.AbstractReadRepository(Of TEntity).RelatedData
+  nameWithType: AbstractReadRepository<TEntity>.RelatedData
+  nameWithType.vb: AbstractReadRepository(Of TEntity).RelatedData
+- uid: Persistence.InMemory.AbstractReadRepository`1.RelatedData*
+  name: RelatedData
+  href: api/Persistence.InMemory.AbstractReadRepository-1.html#Persistence_InMemory_AbstractReadRepository_1_RelatedData_
+  commentId: Overload:Persistence.InMemory.AbstractReadRepository`1.RelatedData
+  isSpec: "True"
+  fullName: Persistence.InMemory.AbstractReadRepository<TEntity>.RelatedData
+  fullName.vb: Persistence.InMemory.AbstractReadRepository(Of TEntity).RelatedData
+  nameWithType: AbstractReadRepository<TEntity>.RelatedData
+  nameWithType.vb: AbstractReadRepository(Of TEntity).RelatedData
+- uid: Persistence.InMemory.Context
+  name: Context
+  href: api/Persistence.InMemory.Context.html
+  commentId: T:Persistence.InMemory.Context
+  fullName: Persistence.InMemory.Context
+  nameWithType: Context
+- uid: Persistence.InMemory.Context.#ctor
+  name: Context()
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context__ctor
+  commentId: M:Persistence.InMemory.Context.#ctor
+  fullName: Persistence.InMemory.Context.Context()
+  nameWithType: Context.Context()
+- uid: Persistence.InMemory.Context.#ctor*
+  name: Context
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context__ctor_
+  commentId: Overload:Persistence.InMemory.Context.#ctor
+  isSpec: "True"
+  fullName: Persistence.InMemory.Context.Context
+  nameWithType: Context.Context
+- uid: Persistence.InMemory.Context.Commit
+  name: Commit()
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_Commit
+  commentId: M:Persistence.InMemory.Context.Commit
+  fullName: Persistence.InMemory.Context.Commit()
+  nameWithType: Context.Commit()
+- uid: Persistence.InMemory.Context.Commit*
+  name: Commit
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_Commit_
+  commentId: Overload:Persistence.InMemory.Context.Commit
+  isSpec: "True"
+  fullName: Persistence.InMemory.Context.Commit
+  nameWithType: Context.Commit
+- uid: Persistence.InMemory.Context.Delete*
+  name: Delete
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_Delete_
+  commentId: Overload:Persistence.InMemory.Context.Delete
+  isSpec: "True"
+  fullName: Persistence.InMemory.Context.Delete
+  nameWithType: Context.Delete
+- uid: Persistence.InMemory.Context.Delete``1(``0)
+  name: Delete<TEntity>(TEntity)
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_Delete__1___0_
+  commentId: M:Persistence.InMemory.Context.Delete``1(``0)
+  name.vb: Delete(Of TEntity)(TEntity)
+  fullName: Persistence.InMemory.Context.Delete<TEntity>(TEntity)
+  fullName.vb: Persistence.InMemory.Context.Delete(Of TEntity)(TEntity)
+  nameWithType: Context.Delete<TEntity>(TEntity)
+  nameWithType.vb: Context.Delete(Of TEntity)(TEntity)
+- uid: Persistence.InMemory.Context.Insert*
+  name: Insert
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_Insert_
+  commentId: Overload:Persistence.InMemory.Context.Insert
+  isSpec: "True"
+  fullName: Persistence.InMemory.Context.Insert
+  nameWithType: Context.Insert
+- uid: Persistence.InMemory.Context.Insert``1(``0)
+  name: Insert<TEntity>(TEntity)
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_Insert__1___0_
+  commentId: M:Persistence.InMemory.Context.Insert``1(``0)
+  name.vb: Insert(Of TEntity)(TEntity)
+  fullName: Persistence.InMemory.Context.Insert<TEntity>(TEntity)
+  fullName.vb: Persistence.InMemory.Context.Insert(Of TEntity)(TEntity)
+  nameWithType: Context.Insert<TEntity>(TEntity)
+  nameWithType.vb: Context.Insert(Of TEntity)(TEntity)
+- uid: Persistence.InMemory.Context.Merge*
+  name: Merge
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_Merge_
+  commentId: Overload:Persistence.InMemory.Context.Merge
+  isSpec: "True"
+  fullName: Persistence.InMemory.Context.Merge
+  nameWithType: Context.Merge
+- uid: Persistence.InMemory.Context.Merge``1(``0)
+  name: Merge<TEntity>(TEntity)
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_Merge__1___0_
+  commentId: M:Persistence.InMemory.Context.Merge``1(``0)
+  name.vb: Merge(Of TEntity)(TEntity)
+  fullName: Persistence.InMemory.Context.Merge<TEntity>(TEntity)
+  fullName.vb: Persistence.InMemory.Context.Merge(Of TEntity)(TEntity)
+  nameWithType: Context.Merge<TEntity>(TEntity)
+  nameWithType.vb: Context.Merge(Of TEntity)(TEntity)
+- uid: Persistence.InMemory.Context.ReadAll*
+  name: ReadAll
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_ReadAll_
+  commentId: Overload:Persistence.InMemory.Context.ReadAll
+  isSpec: "True"
+  fullName: Persistence.InMemory.Context.ReadAll
+  nameWithType: Context.ReadAll
+- uid: Persistence.InMemory.Context.ReadAll``1
+  name: ReadAll<T>()
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_ReadAll__1
+  commentId: M:Persistence.InMemory.Context.ReadAll``1
+  name.vb: ReadAll(Of T)()
+  fullName: Persistence.InMemory.Context.ReadAll<T>()
+  fullName.vb: Persistence.InMemory.Context.ReadAll(Of T)()
+  nameWithType: Context.ReadAll<T>()
+  nameWithType.vb: Context.ReadAll(Of T)()
+- uid: Persistence.InMemory.Context.StartTransaction(System.String)
+  name: StartTransaction(String)
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_StartTransaction_System_String_
+  commentId: M:Persistence.InMemory.Context.StartTransaction(System.String)
+  fullName: Persistence.InMemory.Context.StartTransaction(System.String)
+  nameWithType: Context.StartTransaction(String)
+- uid: Persistence.InMemory.Context.StartTransaction*
+  name: StartTransaction
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_StartTransaction_
+  commentId: Overload:Persistence.InMemory.Context.StartTransaction
+  isSpec: "True"
+  fullName: Persistence.InMemory.Context.StartTransaction
+  nameWithType: Context.StartTransaction
+- uid: Persistence.InMemory.Context.Update*
+  name: Update
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_Update_
+  commentId: Overload:Persistence.InMemory.Context.Update
+  isSpec: "True"
+  fullName: Persistence.InMemory.Context.Update
+  nameWithType: Context.Update
+- uid: Persistence.InMemory.Context.Update``1(``0)
+  name: Update<TEntity>(TEntity)
+  href: api/Persistence.InMemory.Context.html#Persistence_InMemory_Context_Update__1___0_
+  commentId: M:Persistence.InMemory.Context.Update``1(``0)
+  name.vb: Update(Of TEntity)(TEntity)
+  fullName: Persistence.InMemory.Context.Update<TEntity>(TEntity)
+  fullName.vb: Persistence.InMemory.Context.Update(Of TEntity)(TEntity)
+  nameWithType: Context.Update<TEntity>(TEntity)
+  nameWithType.vb: Context.Update(Of TEntity)(TEntity)
+- uid: Persistence.InMemory.Extensions
+  name: Persistence.InMemory.Extensions
+  href: api/Persistence.InMemory.Extensions.html
+  commentId: N:Persistence.InMemory.Extensions
+  fullName: Persistence.InMemory.Extensions
+  nameWithType: Persistence.InMemory.Extensions
+- uid: Persistence.InMemory.Extensions.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  href: api/Persistence.InMemory.Extensions.ServiceCollectionExtensions.html
+  commentId: T:Persistence.InMemory.Extensions.ServiceCollectionExtensions
+  fullName: Persistence.InMemory.Extensions.ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+- uid: Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryPersistence(IServiceCollection)
+  name: AddInMemoryPersistence(IServiceCollection)
+  href: api/Persistence.InMemory.Extensions.ServiceCollectionExtensions.html#Persistence_InMemory_Extensions_ServiceCollectionExtensions_AddInMemoryPersistence_IServiceCollection_
+  commentId: M:Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryPersistence(IServiceCollection)
+  fullName: Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryPersistence(IServiceCollection)
+  nameWithType: ServiceCollectionExtensions.AddInMemoryPersistence(IServiceCollection)
+- uid: Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryPersistence*
+  name: AddInMemoryPersistence
+  href: api/Persistence.InMemory.Extensions.ServiceCollectionExtensions.html#Persistence_InMemory_Extensions_ServiceCollectionExtensions_AddInMemoryPersistence_
+  commentId: Overload:Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryPersistence
+  isSpec: "True"
+  fullName: Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryPersistence
+  nameWithType: ServiceCollectionExtensions.AddInMemoryPersistence
+- uid: Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryReadRepository*
+  name: AddInMemoryReadRepository
+  href: api/Persistence.InMemory.Extensions.ServiceCollectionExtensions.html#Persistence_InMemory_Extensions_ServiceCollectionExtensions_AddInMemoryReadRepository_
+  commentId: Overload:Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryReadRepository
+  isSpec: "True"
+  fullName: Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryReadRepository
+  nameWithType: ServiceCollectionExtensions.AddInMemoryReadRepository
+- uid: Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryReadRepository``2(IServiceCollection)
+  name: AddInMemoryReadRepository<TEntity, TRepository>(IServiceCollection)
+  href: api/Persistence.InMemory.Extensions.ServiceCollectionExtensions.html#Persistence_InMemory_Extensions_ServiceCollectionExtensions_AddInMemoryReadRepository__2_IServiceCollection_
+  commentId: M:Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryReadRepository``2(IServiceCollection)
+  name.vb: AddInMemoryReadRepository(Of TEntity, TRepository)(IServiceCollection)
+  fullName: Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryReadRepository<TEntity, TRepository>(IServiceCollection)
+  fullName.vb: Persistence.InMemory.Extensions.ServiceCollectionExtensions.AddInMemoryReadRepository(Of TEntity, TRepository)(IServiceCollection)
+  nameWithType: ServiceCollectionExtensions.AddInMemoryReadRepository<TEntity, TRepository>(IServiceCollection)
+  nameWithType.vb: ServiceCollectionExtensions.AddInMemoryReadRepository(Of TEntity, TRepository)(IServiceCollection)
+- uid: Persistence.InMemory.IContext
+  name: IContext
+  href: api/Persistence.InMemory.IContext.html
+  commentId: T:Persistence.InMemory.IContext
+  fullName: Persistence.InMemory.IContext
+  nameWithType: IContext
+- uid: Persistence.InMemory.IContext.Commit
+  name: Commit()
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_Commit
+  commentId: M:Persistence.InMemory.IContext.Commit
+  fullName: Persistence.InMemory.IContext.Commit()
+  nameWithType: IContext.Commit()
+- uid: Persistence.InMemory.IContext.Commit*
+  name: Commit
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_Commit_
+  commentId: Overload:Persistence.InMemory.IContext.Commit
+  isSpec: "True"
+  fullName: Persistence.InMemory.IContext.Commit
+  nameWithType: IContext.Commit
+- uid: Persistence.InMemory.IContext.Delete*
+  name: Delete
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_Delete_
+  commentId: Overload:Persistence.InMemory.IContext.Delete
+  isSpec: "True"
+  fullName: Persistence.InMemory.IContext.Delete
+  nameWithType: IContext.Delete
+- uid: Persistence.InMemory.IContext.Delete``1(``0)
+  name: Delete<TEntity>(TEntity)
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_Delete__1___0_
+  commentId: M:Persistence.InMemory.IContext.Delete``1(``0)
+  name.vb: Delete(Of TEntity)(TEntity)
+  fullName: Persistence.InMemory.IContext.Delete<TEntity>(TEntity)
+  fullName.vb: Persistence.InMemory.IContext.Delete(Of TEntity)(TEntity)
+  nameWithType: IContext.Delete<TEntity>(TEntity)
+  nameWithType.vb: IContext.Delete(Of TEntity)(TEntity)
+- uid: Persistence.InMemory.IContext.Insert*
+  name: Insert
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_Insert_
+  commentId: Overload:Persistence.InMemory.IContext.Insert
+  isSpec: "True"
+  fullName: Persistence.InMemory.IContext.Insert
+  nameWithType: IContext.Insert
+- uid: Persistence.InMemory.IContext.Insert``1(``0)
+  name: Insert<TEntity>(TEntity)
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_Insert__1___0_
+  commentId: M:Persistence.InMemory.IContext.Insert``1(``0)
+  name.vb: Insert(Of TEntity)(TEntity)
+  fullName: Persistence.InMemory.IContext.Insert<TEntity>(TEntity)
+  fullName.vb: Persistence.InMemory.IContext.Insert(Of TEntity)(TEntity)
+  nameWithType: IContext.Insert<TEntity>(TEntity)
+  nameWithType.vb: IContext.Insert(Of TEntity)(TEntity)
+- uid: Persistence.InMemory.IContext.Merge*
+  name: Merge
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_Merge_
+  commentId: Overload:Persistence.InMemory.IContext.Merge
+  isSpec: "True"
+  fullName: Persistence.InMemory.IContext.Merge
+  nameWithType: IContext.Merge
+- uid: Persistence.InMemory.IContext.Merge``1(``0)
+  name: Merge<TEntity>(TEntity)
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_Merge__1___0_
+  commentId: M:Persistence.InMemory.IContext.Merge``1(``0)
+  name.vb: Merge(Of TEntity)(TEntity)
+  fullName: Persistence.InMemory.IContext.Merge<TEntity>(TEntity)
+  fullName.vb: Persistence.InMemory.IContext.Merge(Of TEntity)(TEntity)
+  nameWithType: IContext.Merge<TEntity>(TEntity)
+  nameWithType.vb: IContext.Merge(Of TEntity)(TEntity)
+- uid: Persistence.InMemory.IContext.ReadAll*
+  name: ReadAll
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_ReadAll_
+  commentId: Overload:Persistence.InMemory.IContext.ReadAll
+  isSpec: "True"
+  fullName: Persistence.InMemory.IContext.ReadAll
+  nameWithType: IContext.ReadAll
+- uid: Persistence.InMemory.IContext.ReadAll``1
+  name: ReadAll<T>()
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_ReadAll__1
+  commentId: M:Persistence.InMemory.IContext.ReadAll``1
+  name.vb: ReadAll(Of T)()
+  fullName: Persistence.InMemory.IContext.ReadAll<T>()
+  fullName.vb: Persistence.InMemory.IContext.ReadAll(Of T)()
+  nameWithType: IContext.ReadAll<T>()
+  nameWithType.vb: IContext.ReadAll(Of T)()
+- uid: Persistence.InMemory.IContext.StartTransaction(System.String)
+  name: StartTransaction(String)
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_StartTransaction_System_String_
+  commentId: M:Persistence.InMemory.IContext.StartTransaction(System.String)
+  fullName: Persistence.InMemory.IContext.StartTransaction(System.String)
+  nameWithType: IContext.StartTransaction(String)
+- uid: Persistence.InMemory.IContext.StartTransaction*
+  name: StartTransaction
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_StartTransaction_
+  commentId: Overload:Persistence.InMemory.IContext.StartTransaction
+  isSpec: "True"
+  fullName: Persistence.InMemory.IContext.StartTransaction
+  nameWithType: IContext.StartTransaction
+- uid: Persistence.InMemory.IContext.Update*
+  name: Update
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_Update_
+  commentId: Overload:Persistence.InMemory.IContext.Update
+  isSpec: "True"
+  fullName: Persistence.InMemory.IContext.Update
+  nameWithType: IContext.Update
+- uid: Persistence.InMemory.IContext.Update``1(``0)
+  name: Update<TEntity>(TEntity)
+  href: api/Persistence.InMemory.IContext.html#Persistence_InMemory_IContext_Update__1___0_
+  commentId: M:Persistence.InMemory.IContext.Update``1(``0)
+  name.vb: Update(Of TEntity)(TEntity)
+  fullName: Persistence.InMemory.IContext.Update<TEntity>(TEntity)
+  fullName.vb: Persistence.InMemory.IContext.Update(Of TEntity)(TEntity)
+  nameWithType: IContext.Update<TEntity>(TEntity)
+  nameWithType.vb: IContext.Update(Of TEntity)(TEntity)
+- uid: Persistence.InMemory.UnitOfWork
+  name: UnitOfWork
+  href: api/Persistence.InMemory.UnitOfWork.html
+  commentId: T:Persistence.InMemory.UnitOfWork
+  fullName: Persistence.InMemory.UnitOfWork
+  nameWithType: UnitOfWork
+- uid: Persistence.InMemory.UnitOfWork.#ctor(Persistence.InMemory.IContext)
+  name: UnitOfWork(IContext)
+  href: api/Persistence.InMemory.UnitOfWork.html#Persistence_InMemory_UnitOfWork__ctor_Persistence_InMemory_IContext_
+  commentId: M:Persistence.InMemory.UnitOfWork.#ctor(Persistence.InMemory.IContext)
+  fullName: Persistence.InMemory.UnitOfWork.UnitOfWork(Persistence.InMemory.IContext)
+  nameWithType: UnitOfWork.UnitOfWork(IContext)
+- uid: Persistence.InMemory.UnitOfWork.#ctor*
+  name: UnitOfWork
+  href: api/Persistence.InMemory.UnitOfWork.html#Persistence_InMemory_UnitOfWork__ctor_
+  commentId: Overload:Persistence.InMemory.UnitOfWork.#ctor
+  isSpec: "True"
+  fullName: Persistence.InMemory.UnitOfWork.UnitOfWork
+  nameWithType: UnitOfWork.UnitOfWork
+- uid: Persistence.InMemory.UnitOfWork.Begin(System.String)
+  name: Begin(String)
+  href: api/Persistence.InMemory.UnitOfWork.html#Persistence_InMemory_UnitOfWork_Begin_System_String_
+  commentId: M:Persistence.InMemory.UnitOfWork.Begin(System.String)
+  fullName: Persistence.InMemory.UnitOfWork.Begin(System.String)
+  nameWithType: UnitOfWork.Begin(String)
+- uid: Persistence.InMemory.UnitOfWork.Begin*
+  name: Begin
+  href: api/Persistence.InMemory.UnitOfWork.html#Persistence_InMemory_UnitOfWork_Begin_
+  commentId: Overload:Persistence.InMemory.UnitOfWork.Begin
+  isSpec: "True"
+  fullName: Persistence.InMemory.UnitOfWork.Begin
+  nameWithType: UnitOfWork.Begin
+- uid: Persistence.InMemory.UnitOfWork.Commit
+  name: Commit()
+  href: api/Persistence.InMemory.UnitOfWork.html#Persistence_InMemory_UnitOfWork_Commit
+  commentId: M:Persistence.InMemory.UnitOfWork.Commit
+  fullName: Persistence.InMemory.UnitOfWork.Commit()
+  nameWithType: UnitOfWork.Commit()
+- uid: Persistence.InMemory.UnitOfWork.Commit*
+  name: Commit
+  href: api/Persistence.InMemory.UnitOfWork.html#Persistence_InMemory_UnitOfWork_Commit_
+  commentId: Overload:Persistence.InMemory.UnitOfWork.Commit
+  isSpec: "True"
+  fullName: Persistence.InMemory.UnitOfWork.Commit
+  nameWithType: UnitOfWork.Commit
+- uid: Persistence.InMemory.UnitOfWork.GetRepository*
+  name: GetRepository
+  href: api/Persistence.InMemory.UnitOfWork.html#Persistence_InMemory_UnitOfWork_GetRepository_
+  commentId: Overload:Persistence.InMemory.UnitOfWork.GetRepository
+  isSpec: "True"
+  fullName: Persistence.InMemory.UnitOfWork.GetRepository
+  nameWithType: UnitOfWork.GetRepository
+- uid: Persistence.InMemory.UnitOfWork.GetRepository``1
+  name: GetRepository<TEntity>()
+  href: api/Persistence.InMemory.UnitOfWork.html#Persistence_InMemory_UnitOfWork_GetRepository__1
+  commentId: M:Persistence.InMemory.UnitOfWork.GetRepository``1
+  name.vb: GetRepository(Of TEntity)()
+  fullName: Persistence.InMemory.UnitOfWork.GetRepository<TEntity>()
+  fullName.vb: Persistence.InMemory.UnitOfWork.GetRepository(Of TEntity)()
+  nameWithType: UnitOfWork.GetRepository<TEntity>()
+  nameWithType.vb: UnitOfWork.GetRepository(Of TEntity)()
+- uid: Persistence.InMemory.WriteRepository`1
+  name: WriteRepository<TEntity>
+  href: api/Persistence.InMemory.WriteRepository-1.html
+  commentId: T:Persistence.InMemory.WriteRepository`1
+  name.vb: WriteRepository(Of TEntity)
+  fullName: Persistence.InMemory.WriteRepository<TEntity>
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity)
+  nameWithType: WriteRepository<TEntity>
+  nameWithType.vb: WriteRepository(Of TEntity)
+- uid: Persistence.InMemory.WriteRepository`1.#ctor(Persistence.InMemory.IContext)
+  name: WriteRepository(IContext)
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1__ctor_Persistence_InMemory_IContext_
+  commentId: M:Persistence.InMemory.WriteRepository`1.#ctor(Persistence.InMemory.IContext)
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.WriteRepository(Persistence.InMemory.IContext)
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).WriteRepository(Persistence.InMemory.IContext)
+  nameWithType: WriteRepository<TEntity>.WriteRepository(IContext)
+  nameWithType.vb: WriteRepository(Of TEntity).WriteRepository(IContext)
+- uid: Persistence.InMemory.WriteRepository`1.#ctor*
+  name: WriteRepository
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1__ctor_
+  commentId: Overload:Persistence.InMemory.WriteRepository`1.#ctor
+  isSpec: "True"
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.WriteRepository
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).WriteRepository
+  nameWithType: WriteRepository<TEntity>.WriteRepository
+  nameWithType.vb: WriteRepository(Of TEntity).WriteRepository
+- uid: Persistence.InMemory.WriteRepository`1.DeleteAsync(`0,CancellationToken)
+  name: DeleteAsync(TEntity, CancellationToken)
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_DeleteAsync__0_CancellationToken_
+  commentId: M:Persistence.InMemory.WriteRepository`1.DeleteAsync(`0,CancellationToken)
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.DeleteAsync(TEntity, CancellationToken)
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).DeleteAsync(TEntity, CancellationToken)
+  nameWithType: WriteRepository<TEntity>.DeleteAsync(TEntity, CancellationToken)
+  nameWithType.vb: WriteRepository(Of TEntity).DeleteAsync(TEntity, CancellationToken)
+- uid: Persistence.InMemory.WriteRepository`1.DeleteAsync*
+  name: DeleteAsync
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_DeleteAsync_
+  commentId: Overload:Persistence.InMemory.WriteRepository`1.DeleteAsync
+  isSpec: "True"
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.DeleteAsync
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).DeleteAsync
+  nameWithType: WriteRepository<TEntity>.DeleteAsync
+  nameWithType.vb: WriteRepository(Of TEntity).DeleteAsync
+- uid: Persistence.InMemory.WriteRepository`1.DeleteAsyncAsync(IEnumerable{`0},CancellationToken)
+  name: DeleteAsyncAsync(IEnumerable<TEntity>, CancellationToken)
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_DeleteAsyncAsync_IEnumerable__0__CancellationToken_
+  commentId: M:Persistence.InMemory.WriteRepository`1.DeleteAsyncAsync(IEnumerable{`0},CancellationToken)
+  name.vb: DeleteAsyncAsync(IEnumerable(Of TEntity), CancellationToken)
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.DeleteAsyncAsync(IEnumerable<TEntity>, CancellationToken)
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).DeleteAsyncAsync(IEnumerable(Of TEntity), CancellationToken)
+  nameWithType: WriteRepository<TEntity>.DeleteAsyncAsync(IEnumerable<TEntity>, CancellationToken)
+  nameWithType.vb: WriteRepository(Of TEntity).DeleteAsyncAsync(IEnumerable(Of TEntity), CancellationToken)
+- uid: Persistence.InMemory.WriteRepository`1.DeleteAsyncAsync*
+  name: DeleteAsyncAsync
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_DeleteAsyncAsync_
+  commentId: Overload:Persistence.InMemory.WriteRepository`1.DeleteAsyncAsync
+  isSpec: "True"
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.DeleteAsyncAsync
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).DeleteAsyncAsync
+  nameWithType: WriteRepository<TEntity>.DeleteAsyncAsync
+  nameWithType.vb: WriteRepository(Of TEntity).DeleteAsyncAsync
+- uid: Persistence.InMemory.WriteRepository`1.InsertAsync(`0,CancellationToken)
+  name: InsertAsync(TEntity, CancellationToken)
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_InsertAsync__0_CancellationToken_
+  commentId: M:Persistence.InMemory.WriteRepository`1.InsertAsync(`0,CancellationToken)
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.InsertAsync(TEntity, CancellationToken)
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).InsertAsync(TEntity, CancellationToken)
+  nameWithType: WriteRepository<TEntity>.InsertAsync(TEntity, CancellationToken)
+  nameWithType.vb: WriteRepository(Of TEntity).InsertAsync(TEntity, CancellationToken)
+- uid: Persistence.InMemory.WriteRepository`1.InsertAsync*
+  name: InsertAsync
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_InsertAsync_
+  commentId: Overload:Persistence.InMemory.WriteRepository`1.InsertAsync
+  isSpec: "True"
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.InsertAsync
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).InsertAsync
+  nameWithType: WriteRepository<TEntity>.InsertAsync
+  nameWithType.vb: WriteRepository(Of TEntity).InsertAsync
+- uid: Persistence.InMemory.WriteRepository`1.InsertRangeAsync(IEnumerable{`0},CancellationToken)
+  name: InsertRangeAsync(IEnumerable<TEntity>, CancellationToken)
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_InsertRangeAsync_IEnumerable__0__CancellationToken_
+  commentId: M:Persistence.InMemory.WriteRepository`1.InsertRangeAsync(IEnumerable{`0},CancellationToken)
+  name.vb: InsertRangeAsync(IEnumerable(Of TEntity), CancellationToken)
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.InsertRangeAsync(IEnumerable<TEntity>, CancellationToken)
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).InsertRangeAsync(IEnumerable(Of TEntity), CancellationToken)
+  nameWithType: WriteRepository<TEntity>.InsertRangeAsync(IEnumerable<TEntity>, CancellationToken)
+  nameWithType.vb: WriteRepository(Of TEntity).InsertRangeAsync(IEnumerable(Of TEntity), CancellationToken)
+- uid: Persistence.InMemory.WriteRepository`1.InsertRangeAsync*
+  name: InsertRangeAsync
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_InsertRangeAsync_
+  commentId: Overload:Persistence.InMemory.WriteRepository`1.InsertRangeAsync
+  isSpec: "True"
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.InsertRangeAsync
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).InsertRangeAsync
+  nameWithType: WriteRepository<TEntity>.InsertRangeAsync
+  nameWithType.vb: WriteRepository(Of TEntity).InsertRangeAsync
+- uid: Persistence.InMemory.WriteRepository`1.MergeAsync(`0,CancellationToken)
+  name: MergeAsync(TEntity, CancellationToken)
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_MergeAsync__0_CancellationToken_
+  commentId: M:Persistence.InMemory.WriteRepository`1.MergeAsync(`0,CancellationToken)
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.MergeAsync(TEntity, CancellationToken)
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).MergeAsync(TEntity, CancellationToken)
+  nameWithType: WriteRepository<TEntity>.MergeAsync(TEntity, CancellationToken)
+  nameWithType.vb: WriteRepository(Of TEntity).MergeAsync(TEntity, CancellationToken)
+- uid: Persistence.InMemory.WriteRepository`1.MergeAsync*
+  name: MergeAsync
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_MergeAsync_
+  commentId: Overload:Persistence.InMemory.WriteRepository`1.MergeAsync
+  isSpec: "True"
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.MergeAsync
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).MergeAsync
+  nameWithType: WriteRepository<TEntity>.MergeAsync
+  nameWithType.vb: WriteRepository(Of TEntity).MergeAsync
+- uid: Persistence.InMemory.WriteRepository`1.MergeRangeAsync(IEnumerable{`0},CancellationToken)
+  name: MergeRangeAsync(IEnumerable<TEntity>, CancellationToken)
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_MergeRangeAsync_IEnumerable__0__CancellationToken_
+  commentId: M:Persistence.InMemory.WriteRepository`1.MergeRangeAsync(IEnumerable{`0},CancellationToken)
+  name.vb: MergeRangeAsync(IEnumerable(Of TEntity), CancellationToken)
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.MergeRangeAsync(IEnumerable<TEntity>, CancellationToken)
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).MergeRangeAsync(IEnumerable(Of TEntity), CancellationToken)
+  nameWithType: WriteRepository<TEntity>.MergeRangeAsync(IEnumerable<TEntity>, CancellationToken)
+  nameWithType.vb: WriteRepository(Of TEntity).MergeRangeAsync(IEnumerable(Of TEntity), CancellationToken)
+- uid: Persistence.InMemory.WriteRepository`1.MergeRangeAsync*
+  name: MergeRangeAsync
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_MergeRangeAsync_
+  commentId: Overload:Persistence.InMemory.WriteRepository`1.MergeRangeAsync
+  isSpec: "True"
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.MergeRangeAsync
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).MergeRangeAsync
+  nameWithType: WriteRepository<TEntity>.MergeRangeAsync
+  nameWithType.vb: WriteRepository(Of TEntity).MergeRangeAsync
+- uid: Persistence.InMemory.WriteRepository`1.UpdateAsync(`0,CancellationToken)
+  name: UpdateAsync(TEntity, CancellationToken)
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_UpdateAsync__0_CancellationToken_
+  commentId: M:Persistence.InMemory.WriteRepository`1.UpdateAsync(`0,CancellationToken)
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.UpdateAsync(TEntity, CancellationToken)
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).UpdateAsync(TEntity, CancellationToken)
+  nameWithType: WriteRepository<TEntity>.UpdateAsync(TEntity, CancellationToken)
+  nameWithType.vb: WriteRepository(Of TEntity).UpdateAsync(TEntity, CancellationToken)
+- uid: Persistence.InMemory.WriteRepository`1.UpdateAsync*
+  name: UpdateAsync
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_UpdateAsync_
+  commentId: Overload:Persistence.InMemory.WriteRepository`1.UpdateAsync
+  isSpec: "True"
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.UpdateAsync
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).UpdateAsync
+  nameWithType: WriteRepository<TEntity>.UpdateAsync
+  nameWithType.vb: WriteRepository(Of TEntity).UpdateAsync
+- uid: Persistence.InMemory.WriteRepository`1.UpdateRangeAsync(IEnumerable{`0},CancellationToken)
+  name: UpdateRangeAsync(IEnumerable<TEntity>, CancellationToken)
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_UpdateRangeAsync_IEnumerable__0__CancellationToken_
+  commentId: M:Persistence.InMemory.WriteRepository`1.UpdateRangeAsync(IEnumerable{`0},CancellationToken)
+  name.vb: UpdateRangeAsync(IEnumerable(Of TEntity), CancellationToken)
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.UpdateRangeAsync(IEnumerable<TEntity>, CancellationToken)
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).UpdateRangeAsync(IEnumerable(Of TEntity), CancellationToken)
+  nameWithType: WriteRepository<TEntity>.UpdateRangeAsync(IEnumerable<TEntity>, CancellationToken)
+  nameWithType.vb: WriteRepository(Of TEntity).UpdateRangeAsync(IEnumerable(Of TEntity), CancellationToken)
+- uid: Persistence.InMemory.WriteRepository`1.UpdateRangeAsync*
+  name: UpdateRangeAsync
+  href: api/Persistence.InMemory.WriteRepository-1.html#Persistence_InMemory_WriteRepository_1_UpdateRangeAsync_
+  commentId: Overload:Persistence.InMemory.WriteRepository`1.UpdateRangeAsync
+  isSpec: "True"
+  fullName: Persistence.InMemory.WriteRepository<TEntity>.UpdateRangeAsync
+  fullName.vb: Persistence.InMemory.WriteRepository(Of TEntity).UpdateRangeAsync
+  nameWithType: WriteRepository<TEntity>.UpdateRangeAsync
+  nameWithType.vb: WriteRepository(Of TEntity).UpdateRangeAsync
